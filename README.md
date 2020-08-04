@@ -1,3 +1,3 @@
 # Atode
-# ライセンス
-# 使い方
+# License
+# Usage
