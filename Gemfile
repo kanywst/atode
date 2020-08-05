@@ -9,6 +9,9 @@ gem 'bcrypt'
 gem 'bootstrap-sass','>=3.4.1'
 gem 'rails-controller-testing'
 gem "jquery-rails"
+gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 # Use Puma as the app server
