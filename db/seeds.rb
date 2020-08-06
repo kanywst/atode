@@ -13,3 +13,10 @@ User.create!(name:  "Example User",
                password:              password,
                password_confirmation: password)
 end
+
+users = User.order(:created_at).take(6)
+50.times do
+  title = Faker::Lorem.sentence(word_count: 5)
+  url = Faker::Lorem.sentence(word_count: 5)
+  users.each { |user| user.microposts.create!(title: title,url:url) }
+end
