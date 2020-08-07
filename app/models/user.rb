@@ -7,6 +7,9 @@ class User < ApplicationRecord
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :email,presence: true, length: {maximum: 255},format: {with: VALID_EMAIL_REGEX},uniqueness: {case_sensitive: false}
 
+    VALID_USERNAME_REGEX = /\A[\w+\_.]+\z/i
+    validates :username,presence: true,length: {maximum: 20},format: {with: VALID_USERNAME_REGEX},uniqueness: {case_sensitive: false}
+
     has_secure_password
     validates :password,presence: true,length: {minimum: 6},allow_nil: true
 
@@ -37,5 +40,5 @@ class User < ApplicationRecord
     # follow
     def feed
         Micropost.where("user_id = ?", id)
-      end
+    end
 end

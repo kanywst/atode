@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   before_action :admin_user, only: [:index,:destroy]
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find_by(username: params[:username])
     @microposts = @user.microposts.paginate(page: params[:page])
   end
   
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    User.find(params[:id]).destroy
+    User.find_by(username: params[:username]).destroy
     flash[:success] = "User deleted"
     redirect_to users_url
   end
@@ -34,11 +34,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    @user = User.find_by(username: params[:username])
   end
 
   def update
-    @user = User.find(params[:id])
+    @user = User.find_by(username: params[:username])
     if @user.update_attributes(user_params)
       flash[:success] = "Profile updated"
       redirect_to @user
@@ -49,11 +49,11 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:name,:email,:password,:password_confirmation)
+      params.require(:user).permit(:name,:username,:email,:password,:password_confirmation)
     end
     
     def correct_user
-      @user = User.find(params[:id])
+      @user = User.find_by(username: params[:username])
       redirect_to(root) unless @user == current_user
     end
 
