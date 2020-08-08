@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_07_072616) do
+ActiveRecord::Schema.define(version: 2020_08_08_105709) do
 
   create_table "microposts", force: :cascade do |t|
     t.string "title"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2020_08_07_072616) do
     t.string "remember_digest"
     t.boolean "admin", default: false
     t.string "username"
+    t.string "image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end

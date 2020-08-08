@@ -13,6 +13,8 @@ gem 'faker'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'mechanize'
+gem 'carrierwave'
+gem 'rmagick'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
 # Use Puma as the app server
