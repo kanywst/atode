@@ -1,19 +1,17 @@
 class MicropostsController < ApplicationController
     before_action :logged_in_user,only:[:create,:destroy]
     before_action :correct_user, only: :destroy
-    before_action :url_exist, only: :create
+    #before_action :url_exist, only: :create
 
     def create
-        agent = Mechanize.new
-        page = agent.get(micropost_params[:url])
-        title = page.title
-        micropost_insert_params = {title: title,url: micropost_params[:url]}
-        @micropost = current_user.microposts.build(micropost_insert_params)
-        if @micropost.save
+        @micropost = current_user.microposts.build(micropost_params)
+
+        if @micropost.save && @micropost.save_http_response
             flash[:success] = "Micropost created!"
             redirect_to root_url
         else
             @feed_items = []
+            #redirect_to root_url
             render 'static_pages/home'
         end
     end
@@ -36,6 +34,6 @@ class MicropostsController < ApplicationController
 
         def url_exist
             #@micropost = current_user.microposts.find_by(id: params[:id])
-            redirect_to root_url if params[:url].nil?
+            redirect_to root_url if params[:micropost][:url] == ""
         end
 end

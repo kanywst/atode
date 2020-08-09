@@ -131,7 +131,7 @@ aside {
         padding-top: 0;
       }
       span {
-        display: block;
+        display: inline;
         margin-bottom: 3px;
         line-height: 1;
       }
@@ -214,6 +214,10 @@ input, textarea, select, .uneditable-input {
 .microposts {
   list-style: none;
   padding: 0;
+  //position: relative;
+  .micropost {
+    height: 100%;
+  }
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
@@ -230,9 +234,20 @@ input, textarea, select, .uneditable-input {
       padding: 5px 0;
     }
   }
+  .og-image {
+    img{
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
   .timestamp {
     color: $gray-light;
     display: block;
+    //position:absolute;
+    //margin-bottom: 0;
+    //position: absolute;
+    //margin-bottom: 0;
     //margin-left: 60px;
   }
   .gravatar {
@@ -240,6 +255,11 @@ input, textarea, select, .uneditable-input {
     margin-right: 10px;
     margin-top: 5px;
   }
+}
+
+.row-height{
+  display: flex;
+  flex-wrap: wrap;
 }
 
 aside {
