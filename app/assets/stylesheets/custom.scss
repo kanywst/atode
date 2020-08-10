@@ -210,14 +210,12 @@ input, textarea, select, .uneditable-input {
 }
 
 /* microposts */
-
 .microposts {
   list-style: none;
   padding: 0;
-  //position: relative;
-  .micropost {
-    height: 100%;
-  }
+  display: flex;
+  flex-wrap: wrap;
+
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
@@ -244,10 +242,6 @@ input, textarea, select, .uneditable-input {
   .timestamp {
     color: $gray-light;
     display: block;
-    //position:absolute;
-    //margin-bottom: 0;
-    //position: absolute;
-    //margin-bottom: 0;
     //margin-left: 60px;
   }
   .gravatar {
@@ -255,11 +249,6 @@ input, textarea, select, .uneditable-input {
     margin-right: 10px;
     margin-top: 5px;
   }
-}
-
-.row-height{
-  display: flex;
-  flex-wrap: wrap;
 }
 
 aside {
