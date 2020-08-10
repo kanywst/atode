@@ -1,0 +1,13 @@
+<li> 
+    <div class="micropost-profile">
+        <span class="title"><%= link_to micropost_profile.title,micropost_profile.url %></span>
+        <span class="og-image"><%= image_tag micropost_profile.og_image%></span>
+        <span class="timestamp">
+            Posted <%= time_ago_in_words(micropost_profile.created_at)%> ago.
+            <% if current_user?(micropost_profile.user)%>
+                <%= link_to "delete",micropost_profile,method: :delete,
+                                data: {confirm: "You Sure?"}%>
+            <%end%>
+        </span>
+    </div>
+</li>

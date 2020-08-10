@@ -16,7 +16,7 @@
         <% if @user.microposts.any? %>
             <h3>Articles (<%= @user.microposts.count %>)</h3>
             <ol class="microposts">
-                <%= render @microposts%>
+                <%= render partial: 'shared/micropost_profile', collection: @microposts%>
             </ol>
             <%= will_paginate @microposts%>
         <%end%>
