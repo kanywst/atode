@@ -9,6 +9,8 @@ $gray-medium-light: #eaeaea;
 
 body {
   padding-top: 60px;
+  background-color: #f2f2f2;
+  color: #555;
 }
 
 section {
@@ -60,7 +62,7 @@ p {
   float: left;
   margin-right: 10px;
   font-size: 1.7em;
-  color: white;
+  //color: white;
   text-transform: uppercase;
   letter-spacing: -1px;
   padding-top: 9px;
@@ -287,4 +289,24 @@ span.picture {
 .ef input[type='text']:focus {
 	border-bottom: 2px solid #da3c41;
 	outline: none;
+}
+
+.navbar-default {
+  background-color: #3498db;
+  border-color: transparent;
+}
+
+.navbar-default .navbar-brand {
+  color: white;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: white;
+}
+
+.box{
+  h1{
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 }

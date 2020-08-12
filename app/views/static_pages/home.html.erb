@@ -13,13 +13,12 @@
         <%= render 'shared/feed' %>
     </div>
 <%else%>
-    <div class="center jumbotron">
-        <h1>Atode</h1>
-
-        <h2>
-            A web service that allows you to manage the sites you want to read later.
-        </h2>
-
-    <%= link_to "Sign up now!",signup_path,class:"btn btn-lg btn-primary"%>
+    <div class="center">
+        <div class="row">
+            <div class="col-lg-6 box">
+                <h1>あとでよみます。</h1>
+            </div>
+            <%= link_to "Sign up now!",signup_path,class:"btn btn-lg btn-primary"%>
+        </div>
     </div>
 <%end%>
