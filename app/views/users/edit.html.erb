@@ -3,14 +3,8 @@
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-      <div class="gravatar_edit">
-        <%= gravatar_for @user %>
-      </div>
     <%= form_for(@user, html: {id: @user.username}, url: {controller: 'users', action: "update"}) do |f| %>
       <%= render 'shared/error_message',object: f.object %>
-
-      <%= f.label :image%>
-      <%= f.file_field :image, class: 'form-control' %>
 
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
