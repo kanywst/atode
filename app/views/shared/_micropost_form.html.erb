@@ -1,7 +1,8 @@
 <%=form_for(@micropost) do |f|%>
     <%= render 'shared/error_message', object: f.object %>
-    <div class="field">
-        <%=f.text_field :url,placeholder:"Compose new url..."%>
+    <div class="field cp_iptxt">
+	    <label class="ef">
+        <%=f.text_field :url,placeholder:"URL"%>
+        <%= f.submit "Add",class:"btn btn-primary"%>
     </div>
-    <%= f.submit "Add",class:"btn btn-primary"%>
 <%end%>
